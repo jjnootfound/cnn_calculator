@@ -8,11 +8,11 @@ class GraphicalCalculator(tk.Tk):
         self.title("Calculadora inteligente")
         self.geometry("400x300")
 
-        # Configure grid
+        # grid configuration
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
-        # Create main frame
+        # main window frame
         main_frame = Frame(self)
         main_frame.grid(column=0, row=0, sticky=(N, W, E, S))
         main_frame.columnconfigure(0, weight=1)
@@ -28,10 +28,11 @@ class GraphicalCalculator(tk.Tk):
         clear_button = Button(main_frame, text="Borrar", command=self.clear_canvas)
         clear_button.grid(row=1, column=0, sticky=(W, E))
 
+        #Button for calculating, actions undefined because of the lack of other processes such as opencv and pytorch
         calculate_button = Button(main_frame, text="Calcular", command=lambda: result_label.config(text="Tu resultado es: [en proceso]"))
         calculate_button.grid(row=1, column=1, sticky=(W, E))
 
-        # Label for printing the results of the calculation
+        # results
         self.result_label = Label(main_frame, text="Tu resultado es: [en proceso]", background="white")
         self.result_label.grid(row=2, column=0, columnspan=2, sticky=(W, E))
 
@@ -45,7 +46,7 @@ def addLine(event):
 
 def clear_canvas():
     canvas.delete("all")
-    result_label.config(text="Tu resultado es: [en proceso]")  # Reset label when clearing
+    result_label.config(text="Tu resultado es: [en proceso]")  # resets label when restarting
 
 # Window config
 root = Tk()
