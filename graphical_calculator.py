@@ -19,7 +19,7 @@ class GraphicalCalculator(tk.Tk):
         main_frame.rowconfigure(0, weight=1)
 
         # Canvas config
-        self.canvas = Canvas(main_frame, background='light grey', width=400, height=300)
+        self.canvas = Canvas(main_frame, background='white', width=400, height=300)
         self.canvas.grid(row=0, column=0, columnspan=2, sticky=(N, W, E, S))
         self.canvas.bind("<Button-1>", self.savePosn)
         self.canvas.bind("<B1-Motion>", self.addLine)
